@@ -20,12 +20,14 @@ class Rectangle extends Figure
 
     public Draw(canvas: ICanvas): void
     {
-        // TODO: implement
+        const frame = this.GetFrame();
+        canvas.SetFillColor(this.GetFillColor());
+        canvas.DrawRect(frame.leftTop, frame.width, frame.height, frame.angle);
     }
 
     public Rotate(angle: number): void
     {
-        // TODO: implement
+        this.SetFrame({ ...this.GetFrame(), angle: angle});
     }
 };
 

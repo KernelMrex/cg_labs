@@ -1,3 +1,4 @@
+import Color from "../Color";
 import ICanvas from "../ICanvas";
 import IDrawable from "../IDrawable";
 import Point from "../Point"
@@ -12,10 +13,12 @@ type Frame = {
 abstract class Figure implements IDrawable
 {
     private frame: Frame;
+    private fillColor: Color;
 
     constructor(frame: Frame)
     {
         this.frame = frame;
+        this.fillColor = { r: 0, g: 0, b: 0 };
     }
 
     public abstract Move(x: number, y: number): void;
@@ -32,6 +35,16 @@ abstract class Figure implements IDrawable
     protected SetFrame(frame: Frame): void
     {
         this.frame = frame;
+    }
+
+    public SetFillColor(color: Color): void
+    {
+        this.fillColor = color;
+    }
+
+    public GetFillColor(): Color
+    {
+        return this.fillColor;
     }
 }
 
