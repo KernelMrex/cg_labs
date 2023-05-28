@@ -5,6 +5,7 @@ interface ICanvas
 {
     DrawRect(leftTop: Point, height: number, width: number, angle: number): void;
     SetFillColor(color: Color): void;
+    Clear(): void;
 }
 
 export default ICanvas;

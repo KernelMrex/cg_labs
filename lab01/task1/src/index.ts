@@ -2,8 +2,6 @@ import Group from './Figure/Group';
 import Rectangle from './Figure/Rectangle';
 import HTMLCanvas from './HTMLCanvas';
 
-
-
 window.onload = () => {
     const canvasElement = document.getElementById('canvas') as HTMLCanvasElement;
     

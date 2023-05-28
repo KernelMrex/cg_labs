@@ -4,11 +4,13 @@ import Point from "./Point";
 
 class HTMLCanvas implements ICanvas
 {
+    private canvas: HTMLCanvasElement;
     private context: CanvasRenderingContext2D;
     private fillColor: Color;
 
     constructor(canvas: HTMLCanvasElement)
     {
+        this.canvas = canvas;
         this.context = canvas.getContext("2d");
         this.fillColor = { r: 0, g: 0, b: 0 };
     }
@@ -28,6 +30,11 @@ class HTMLCanvas implements ICanvas
     SetFillColor(color: Color): void
     {
         this.fillColor = color;
+    }
+
+    Clear(): void
+    {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
 
